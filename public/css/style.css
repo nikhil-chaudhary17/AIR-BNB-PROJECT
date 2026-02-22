@@ -1,0 +1,481 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding-top: 30px;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* main content wrapper */
+.content {
+  flex: 1;
+}
+
+
+.navbar {
+  height: 70px;
+}
+
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+}
+
+.nav-link {
+  color: #222222 !important;
+}
+
+/*footer*/
+
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.f-info-socials i {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.f-info {
+  text-align: center; 
+  height: 8rem;
+  background-color: #ebebeb;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/*CARD*/
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  background-color: #f8f9fa;
+}
+
+.card-title {
+  color: #212529;
+}
+
+.details {
+  text-decoration: none;
+}
+
+.card {
+  border: none !important;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 10px;
+}
+
+.card-body {
+  padding: 0 !important;
+  margin-left: 10px;
+} 
+
+footer{
+  position:relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/*  EDIT PAGE STYLING  */
+.edit-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background-color: #f8f9fa;
+  padding: 2rem;
+}
+
+.edit-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 650px;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-title {
+  text-align: center;
+  color: #007bff;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full {
+  width: 100%;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.form-note {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 4px;
+}
+
+.form-submit {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.form-submit button {
+  width: 100%;
+  background-color: #28a745;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-submit button:hover {
+  background-color: #218838;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.back-link a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+
+
+/*  LISTING DETAILS PAGE  */
+.listing-details {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.listing-card {
+  background-color: #fff;
+  width: 100%;  
+  max-width: 650px;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.listing-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Image Styling */
+.listing-image-container {
+  width: 100%;
+  height: 320px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.listing-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.listing-title {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.listing-info {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.listing-info li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1.05rem;
+}
+
+.listing-info li strong {
+  color: #333;
+  width: 120px;
+  display: inline-block;
+}
+
+/* Buttons */
+.listing-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn {
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background-color: #0069d9;
+  transform: translateY(-1px);
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .listing-buttons {
+    flex-direction: column;
+  }
+} 
+
+/*  REVIEW SECTION  */
+.review-section {
+  margin-top: 4rem;
+}
+
+.review-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #212529;
+}
+
+/* Form Card */
+.review-section form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  max-width: 520px;
+}
+
+/* Remove default fieldset border */
+.starability-slot {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Hide radio buttons */
+.starability-slot input[type="radio"] {
+  display: none;
+}
+
+/* Star Labels */
+.starability-slot label {
+  font-size: 2rem;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.15s ease;
+}
+
+/* Star Hover Effect */
+.starability-slot label:hover,
+.starability-slot label:hover ~ label {
+  color: #ffc107;
+}
+
+/* Checked Stars */
+.starability-slot input:checked ~ label {
+  color: #ffc107;
+}
+
+/* Make stars align properly */
+.starability-slot {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+/* Comment Label */
+.comment-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Textarea */
+.review-section textarea {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  padding: 0.8rem;
+  resize: none;
+  transition: all 0.2s ease;
+}
+
+.review-section textarea:focus {
+  border-color: #212529;
+  box-shadow: 0 0 0 3px rgba(33, 37, 41, 0.1);
+  outline: none;
+}
+
+/* Submit Button */
+.review-section .btn {
+  margin-top: 1rem;
+  padding: 0.7rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.review-section .btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* Individual Review Cards */
+.review-card {
+  border: none !important;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform .2s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+}
+
+.review-author {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.review-rating {
+  color: #f4b400;
+  font-size: 1.1rem;
+}
+
+.review-text {
+  margin-top: .5rem;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* star icons for rating */
+.star {
+  color: #f4b400;
+  font-size: 1.2rem;
+}

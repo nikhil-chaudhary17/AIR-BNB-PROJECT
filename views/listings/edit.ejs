@@ -1,0 +1,72 @@
+<% layout("layouts/boilerplate") %>
+
+  <div class="edit-page">
+    <div class="edit-card">
+      <h3 class="edit-title">✏️ Edit Listing</h3>
+
+      <form action="/listings/<%= listing._id %>?_method=PUT" method="POST" class="edit-form needs-validation"
+        novalidate enctype="multipart/form-data">
+        <!-- Title & Price -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="listing[title]" value="<%= listing.title %>" required>
+            <div class="invalid-feedback"><b>Enter a valid Title</b></div>
+          </div>
+
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" id="price" name="listing[price]" value="<%= listing.price %>" required>
+            <div class="invalid-feedback"><b>price should be valid</b></div>
+
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group full">
+          <label for="description">Description</label>
+          <textarea id="description" name="listing[description]" rows="2" required><%= listing.description %></textarea>
+          <div class="invalid-feedback"><b>Write a short Description</b></div>
+        </div>
+
+        <!-- Image -->
+
+        <!-- Current Image -->
+
+        <div class="form-group full">
+          <img src="<%= listing.image.url %>" alt="" style="width: 200px; height: auto; border-radius: 8px;">
+        </div>
+
+        <div class="form-group full">
+          <label for="image">Upload New Image</label>
+          <input type="file" id="image" name="image" class="form-control" value="<%= listing.image.url %>">
+          <div class="invalid-feedback"><b>Enter a valid url</b></div>
+
+        </div>
+
+        <!-- Location & Country -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="listing[location]" value="<%= listing.location %>" required>
+            <div class="invalid-feedback"><b>Enter a valid location</b></div>
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" id="country" name="listing[country]" value="<%= listing.country %>" required>
+            <div class="invalid-feedback"><b>Enter a valid country</b></div>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="form-submit">
+          <button type="submit">Save Changes</button>
+        </div>
+      </form>
+
+      <div class="back-link">
+        <a href="/listings/<%= listing._id %>">← Back to Listing</a>
+      </div>
+    </div>
+  </div>

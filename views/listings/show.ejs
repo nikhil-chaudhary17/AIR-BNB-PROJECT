@@ -1,0 +1,108 @@
+<% layout("layouts/boilerplate") %>
+
+  <div class="listing-details">
+    <div class="listing-card">
+      <div class="listing-image-container">
+        <img src="<%= listing.image.url %>" alt="<%= listing.title %>" class="listing-image" />
+      </div>
+
+      <h3 class="listing-title">🏡 <%= listing.title %>
+      </h3>
+
+      <ul class="listing-info">
+        <li><strong>Owner:</strong>
+          <%= listing.owner.username %>
+        </li>
+        <li><strong>Description:</strong>
+          <%= listing.description %>
+        </li>
+        <li><strong>Price:</strong> ₹ <%= listing.price.toLocaleString("en-IN") %>
+        </li>
+        <li><strong>Location:</strong>
+          <%= listing.location %>
+        </li>
+        <li><strong>Country:</strong>
+          <%= listing.country %>
+        </li>
+      </ul>
+      <% if(currUser && currUser._id.equals(listing.owner._id)) { %>
+        <div class="listing-buttons">
+          <form action="/listings/<%= listing.id %>/edit">
+            <button class="btn edit-btn">✏️ Edit Listing</button>
+          </form>
+
+          <form method="POST" action="/listings/<%= listing.id %>?_method=DELETE">
+            <button class="btn delete-btn">🗑️ Delete Listing</button>
+          </form>
+        </div>
+        <% } %>
+
+          <hr style="margin-top: 40px;">
+
+          <div class="review-section">
+            <% if(currUser) { %>
+              <h4 class="review-title">Leave a Review</h4>
+
+              <form action="/listings/<%= listing._id %>/reviews" method="POST">
+
+                <fieldset class="starability-slot">
+                  <legend>Rating:</legend>
+
+                  <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="" checked
+                    aria-label="No rating." />
+
+                  <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                  <label for="first-rate1" title="Terrible">1 star</label>
+
+                  <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                  <label for="first-rate2" title="Not good">2 stars</label>
+
+                  <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                  <label for="first-rate3" title="Average">3 stars</label>
+
+                  <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                  <label for="first-rate4" title="Very good">4 stars</label>
+
+                  <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                  <label for="first-rate5" title="Amazing">5 stars</label>
+                </fieldset>
+
+                <div class="mb-3 mt-4">
+                  <label for="comment" class="comment-label">Comment</label>
+                  <textarea name="review[comment]" id="comment" rows="4" cols="50" required></textarea>
+                </div>
+
+                <button class="btn btn-dark w-100">Submit Review</button>
+              </form>
+              <% } %>
+
+                <hr>
+
+                <h4 class="review-title">All Reviews</h4>
+
+                <% for (let review of listing.reviews) { %>
+                  <div class="review-card">
+                    <div class="review-author">👤 <%= review.author.username %>
+                    </div>
+
+                    <div class="review-rating">
+                      <% for (let i=0; i < review.rating; i++) { %>
+                        ⭐
+                        <% } %>
+                    </div>
+
+                    <p class="review-text">
+                      <%= review.comment %>
+                    </p>
+                    <% if(currUser && currUser._id.equals(review.author._id)) { %>
+                      <form class="mb-3" method="POST"
+                        action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+                        <button class="btn btn-sm btn-dark">Delete</button>
+                      </form>
+                      <% } %>
+                  </div>
+                  <% } %>
+
+          </div>
+    </div>
+  </div>
