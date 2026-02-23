@@ -65,10 +65,6 @@ const sessionOptions = {
     },
 };  
 
- /* app.get('/', (req, res) => {
-    res.send('Hello World');
-});  */
-
 
 
 app.use(session(sessionOptions));
@@ -89,18 +85,7 @@ app.use((req,res,next) => {
     next();
 })
 
- /*app.get("/demouser", async (req, res) => {
-    let fakeUser = new User({
-        email : "fake@example.com",
-        username: "Nikhil"
-    });
 
-    let registeredUser = await User.register(fakeUser, "chicken"); // this will hash the password and save the user to the database
-    res.send(registeredUser);
-});   */
-
-
-//routes
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/", userRouter);
@@ -113,23 +98,8 @@ app.all(/.*/, (req, res, next) => {
 app.use((err, req, res, next) => {
     let { statusCode = 500, message = "Something went wrong!" } = err;
     res.render("error.ejs", { message });
-    // res.status(statusCode).send(message);
 });
 
-
-/* app.get("/listing" , async (req,res) => {
-    let sampleListing = new Listing({
-        title: "Beautiful Beach resort",
-        description: "A lovely resort by the beach with stunning views.",
-        price: 1500,
-        location: "Goa",
-        country:"India"
-    });
-    await sampleListing.save();
-    console.log("Sample was saved");
-    res.send("successful testing"); 
-
-}); */
 
 app.listen(8080, () => {
     console.log('Server is running on port 8080');

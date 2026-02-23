@@ -29,11 +29,7 @@ image: {
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  /*category: {
-    type: String,
-    enum: ["Rooms", "Iconic City","Mountains","Castles","Amazing Pools","Camping","Farms","Arctic","other"],
-    default: "Other"
-  } */
+
 }); 
 
 listingSchema.post("findOneAndDelete",async(doc) => {
