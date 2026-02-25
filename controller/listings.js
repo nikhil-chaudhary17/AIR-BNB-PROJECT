@@ -1,9 +1,22 @@
 const Listing = require("../models/listing.js");
 
 module.exports.index = async (req, res) => {
-    const allListings = await Listing.find({})
-    res.render("listings/index.ejs", { allListings });
+
+    const { search } = req.query;
+
+    let allListings;
+
+    if (search) {
+        allListings = await Listing.find({
+            title: { $regex: search, $options: "i" }
+        });
+    } else {
+        allListings = await Listing.find({});
+    }
+
+    res.render("listings/index.ejs", { allListings, search });
 };
+
 
 module.exports.show = async (req, res) => {
     let { id } = req.params;
@@ -96,3 +109,4 @@ module.exports.delete = async (req, res) => {
     req.flash("success", "Listing deleted successfully!"); 
     res.redirect("/listings");
 };
+

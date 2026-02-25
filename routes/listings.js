@@ -32,4 +32,6 @@ router.route("/:id")
 router.get("/:id/edit",isLoggedIn, wrapAsync(listingsController.edit));
 
 
+
+
 module.exports = router;
